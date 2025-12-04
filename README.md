@@ -11,4 +11,4 @@ Setup Instructions
 3. Run the Script with sudo
 - sudo ./collect_logins.sh
 
-YouTube Demonstration: 
+YouTube Demonstration: https://youtu.be/dJU__wz4JDo
