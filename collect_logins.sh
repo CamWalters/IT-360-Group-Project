@@ -24,10 +24,12 @@ echo "[+] Writing login history to $OUTPUT"
     #Section header for Local Authentication Attempts.
     echo "===== LOCAL AUTHENTICATION ATTEMPTS ===="
     #This command will show authenticated related journal entries (session open/close, login failures)
-    #excluding sudo entries.
+    #excluding sudo, root, and gdm (as those entries were redundant to the ones being pulled) entries.
     sudo journalctl --no-pager \
     | grep Ei "session opened|session closed|authentication failure|invalid user|failed password" \
-    | grep -vi sudo
+    | grep -vi sudo \
+    | grep -vi root\
+    | grep -vi gdm
     echo
     
 #Sends all collected output to the output file.
